@@ -10,7 +10,7 @@ if (!token) {
   process.exit(1);
 }
 
-const end = new Date().toISOString().slice(0, 10);
+const end = new Date().toISOString().slice(0, 10); // stamp for "updated" only
 const api = async (path) => {
   const r = await fetch(`${SITE}/api/v0${path}`, {
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -19,10 +19,11 @@ const api = async (path) => {
   return r.json();
 };
 
-const q = `start=${START}&end=${end}`;
+const q = `start=${START}`; // no end param: defaults to now, so today's data is included
 
 const totalRes = await api(`/stats/total?${q}`);
-const total = totalRes.total ?? 0;
+// page views only — click events are tracked separately per paper
+const total = Math.max(0, (totalRes.total ?? 0) - (totalRes.total_events ?? 0));
 
 let countries = [];
 try {
