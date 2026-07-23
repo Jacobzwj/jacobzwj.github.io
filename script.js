@@ -70,18 +70,16 @@ const targets = navLinks
       .join("");
   }
 
-  // Most-read tags on publications (threshold keeps it meaningful)
+  // Per-paper read counts (clicks on the DOI link)
   if (stats && Array.isArray(stats.papers)) {
-    stats.papers
-      .filter((p) => p.n >= 25)
-      .sort((a, b) => b.n - a.n)
-      .slice(0, 3)
-      .forEach((p) => {
-        const art = document.querySelector(`[data-paper="${p.id}"] h3`);
-        if (art && !art.querySelector(".most-read")) {
-          art.insertAdjacentHTML("beforeend", '<span class="most-read">Most read</span>');
-        }
-      });
+    const counts = new Map(stats.papers.map((p) => [p.id, Number(p.n) || 0]));
+    document.querySelectorAll("article[data-paper]").forEach((art) => {
+      const n = counts.get(art.getAttribute("data-paper")) || 0;
+      art.insertAdjacentHTML(
+        "beforeend",
+        `<span class="pub-reads" title="Clicks on this paper’s link since July 2026"><span class="n">${n.toLocaleString("en-US")}</span>${n === 1 ? "read" : "reads"}</span>`
+      );
+    });
   }
 })();
 

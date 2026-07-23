@@ -382,6 +382,7 @@ h1 {
   letter-spacing: .002em;
   margin-bottom: .5rem;
   max-width: 40em;
+  padding-right: 5.5rem;
 }
 .pub h3 a {
   text-decoration: none;
@@ -585,21 +586,31 @@ h1 {
 }
 .reader-note { font-size: .78rem; color: var(--muted); }
 
-/* Most-read tag on publications */
+/* Per-paper read counts */
 
-.most-read {
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: .62rem;
-  font-weight: 600;
+.pub { position: relative; }
+.pub-reads {
+  position: absolute;
+  top: 1.55rem;
+  right: 0;
+  font-size: .68rem;
+  font-weight: 550;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-  padding: .18em .55em .14em;
-  margin-left: .6em;
-  vertical-align: .22em;
+  color: var(--muted);
+  text-align: right;
   white-space: nowrap;
+}
+.pub-reads .n {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--accent);
+  line-height: 1.1;
 }
 
 /* Footer */
@@ -648,4 +659,7 @@ h1 {
   .site-nav { flex-wrap: wrap; gap: .8rem 1.1rem; }
   html { scroll-padding-top: 7.5rem; }
   .awards li { grid-template-columns: 1fr; gap: .15rem; }
+  .pub h3 { padding-right: 0; }
+  .pub-reads { position: static; display: flex; align-items: baseline; gap: .45em; margin-top: .55rem; }
+  .pub-reads .n { display: inline; font-size: 1.05rem; }
 }
