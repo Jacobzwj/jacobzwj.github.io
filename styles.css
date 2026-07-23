@@ -476,6 +476,11 @@ h1 {
   line-height: 1.55;
 }
 .plain-list em { font-family: var(--serif); }
+.zh-sub {
+  font-family: var(--cjk-serif);
+  font-size: .84rem;
+  color: var(--muted);
+}
 
 /* Recognition */
 
