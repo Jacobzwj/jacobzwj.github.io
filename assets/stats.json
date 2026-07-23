@@ -1,17 +1,6 @@
 {
  "updated": "2026-07-23",
- "total": 2,
- "countries": [
-  {
-   "cc": "US",
-   "name": "United States",
-   "n": 3
-  }
- ],
- "papers": [
-  {
-   "id": "paper/emotion-flow",
-   "n": 1
-  }
- ]
+ "total": 0,
+ "countries": [],
+ "papers": []
 }
