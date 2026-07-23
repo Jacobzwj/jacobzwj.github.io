@@ -325,6 +325,27 @@ h1 {
   min-width: 3rem;
 }
 
+/* News */
+
+.news-list { list-style: none; max-width: 46em; }
+.news-list li {
+  display: flex;
+  gap: 1.8rem;
+  padding-block: .95rem;
+  border-top: 1px solid var(--line-soft);
+}
+.news-list li:first-child { border-top: none; padding-top: 0; }
+.news-date {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+  font-size: 1.05rem;
+  min-width: 3.4rem;
+  line-height: 1.55;
+}
+.news-list p { color: var(--ink-soft); font-size: .98rem; }
+.news-list em { font-family: var(--serif); }
+
 /* Publications */
 
 .note { font-size: .84rem; color: var(--muted); margin-bottom: 2.2rem; }
@@ -382,14 +403,24 @@ h1 {
   max-width: 44em;
 }
 
-/* Projects */
+/* Software */
+
+.soft-intro { margin-bottom: 2.2rem; }
+
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+}
 
 .feature {
   border: 1px solid var(--line);
   padding: clamp(1.4rem, 3vw, 2.2rem);
-  margin-bottom: 2.8rem;
   position: relative;
   background: color-mix(in srgb, var(--paper-deep) 55%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
 }
 .feature::before {
   content: "";
@@ -402,23 +433,29 @@ h1 {
 .feature-title {
   font-family: var(--serif);
   font-weight: 480;
-  font-size: 1.5rem;
-  margin-bottom: .7rem;
+  font-size: 1.4rem;
 }
 .feature-title a { text-decoration: none; transition: color .25s ease; }
 .feature-title a:hover { color: var(--accent); }
+.feature .prose { font-size: .93rem; }
 
-.wip { list-style: none; }
-.wip li { padding-block: 1.15rem; border-top: 1px solid var(--line-soft); }
-.wip-title {
-  font-family: var(--serif);
-  font-weight: 430;
-  font-size: 1.06rem;
-  line-height: 1.45;
-  max-width: 42em;
-  margin-bottom: .25rem;
+.feature-links {
+  margin-top: auto;
+  padding-top: .6rem;
+  font-size: .78rem;
+  font-weight: 550;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
-.wip-meta { font-size: .85rem; color: var(--muted); }
+.feature-links a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  padding-bottom: .12em;
+  transition: border-color .25s ease;
+}
+.feature-links a:hover { border-bottom-color: var(--accent); }
 
 /* Teaching */
 
@@ -525,7 +562,7 @@ h1 {
   .section-grid { grid-template-columns: 1fr; gap: 1.6rem; }
   .section-label { position: static; }
   .areas { grid-template-columns: 1fr; gap: 1.2rem; }
-  .teach-cols, .contact-cols { grid-template-columns: 1fr; }
+  .teach-cols, .contact-cols, .soft-grid { grid-template-columns: 1fr; }
   .year-group { grid-template-columns: 1fr; gap: 0; }
   .year { position: static; padding-top: 1.6rem; font-size: 1.45rem; }
 }
