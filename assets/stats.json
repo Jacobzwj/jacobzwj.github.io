@@ -1,6 +1,12 @@
 {
  "updated": "2026-07-23",
- "total": 0,
- "countries": [],
+ "total": 1,
+ "countries": [
+  {
+   "cc": "US",
+   "name": "United States",
+   "n": 1
+  }
+ ],
  "papers": []
 }
