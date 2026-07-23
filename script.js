@@ -24,18 +24,66 @@ const navLinks = [...document.querySelectorAll(".site-nav a[href^='#']")];
 const targets = navLinks
   .map((a) => document.querySelector(a.getAttribute("href")))
   .filter(Boolean);
-// Visitor count (GoatCounter public counter)
-fetch("https://jacobzwj.goatcounter.com/counter/TOTAL.json")
-  .then((r) => (r.ok ? r.json() : null))
-  .then((d) => {
-    if (!d) return;
-    const n = Number(d.count_unique || d.count);
-    if (n > 0) {
-      document.getElementById("visits").textContent =
-        " · " + n.toLocaleString("en-US") + (n === 1 ? " visit" : " visits");
+// Readership: world map + visit counts
+(async () => {
+  const mapEl = document.getElementById("reader-map");
+  if (!mapEl) return;
+  try {
+    const svg = await fetch("assets/worldmap.svg").then((r) => r.text());
+    mapEl.innerHTML = svg;
+  } catch (e) { /* map stays empty; numbers still render */ }
+
+  let stats = null;
+  try {
+    const r = await fetch("assets/stats.json", { cache: "no-cache" });
+    if (r.ok) stats = await r.json();
+  } catch (e) {}
+
+  // total visits: stats file first, live public counter as fallback/refresher
+  let total = stats && stats.total ? Number(stats.total) : 0;
+  try {
+    const r = await fetch("https://jacobzwj.goatcounter.com/counter/TOTAL.json");
+    if (r.ok) {
+      const d = await r.json();
+      total = Math.max(total, Number(d.count_unique || d.count) || 0);
     }
-  })
-  .catch(() => {});
+  } catch (e) {}
+  if (total > 0) {
+    document.getElementById("r-visits").textContent = total.toLocaleString("en-US");
+  }
+
+  if (stats && Array.isArray(stats.countries) && stats.countries.length) {
+    const cs = stats.countries.filter((c) => c.cc && c.n > 0);
+    const max = Math.max(...cs.map((c) => c.n));
+    for (const c of cs) {
+      const el = mapEl.querySelector(`[data-cc="${c.cc}"]`);
+      if (!el) continue;
+      const ratio = c.n / max;
+      el.classList.add(ratio > 0.5 ? "v3" : ratio > 0.15 ? "v2" : "v1");
+    }
+    document.getElementById("r-countries").textContent =
+      ", from " + cs.length + (cs.length === 1 ? " country or region" : " countries & regions");
+    const top = document.getElementById("r-top");
+    top.innerHTML = cs
+      .slice(0, 5)
+      .map((c) => `<li><span>${c.name}</span><span>${c.n.toLocaleString("en-US")}</span></li>`)
+      .join("");
+  }
+
+  // Most-read tags on publications (threshold keeps it meaningful)
+  if (stats && Array.isArray(stats.papers)) {
+    stats.papers
+      .filter((p) => p.n >= 25)
+      .sort((a, b) => b.n - a.n)
+      .slice(0, 3)
+      .forEach((p) => {
+        const art = document.querySelector(`[data-paper="${p.id}"] h3`);
+        if (art && !art.querySelector(".most-read")) {
+          art.insertAdjacentHTML("beforeend", '<span class="most-read">Most read</span>');
+        }
+      });
+  }
+})();
 
 const spy = new IntersectionObserver(
   (entries) => {

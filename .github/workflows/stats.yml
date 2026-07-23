@@ -1,0 +1,33 @@
+name: Update readership stats
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # daily, 03:00 Hong Kong time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch stats from GoatCounter
+        env:
+          GOATCOUNTER_API_TOKEN: ${{ secrets.GOATCOUNTER_API_TOKEN }}
+        run: node scripts/fetch_stats.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet assets/stats.json; then
+            git add assets/stats.json
+            git commit -m "Update readership stats"
+            git push
+          else
+            echo "No change."
+          fi

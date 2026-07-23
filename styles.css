@@ -536,6 +536,72 @@ h1 {
 .contact-side a { color: var(--ink-soft); text-underline-offset: .18em; text-decoration-color: var(--line); }
 .contact-side a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
+/* Readership */
+
+.reader-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.reader-map { margin: 0; }
+.reader-map svg { display: block; width: 100%; height: auto; }
+.reader-map .mc { fill: #e9e3d3; stroke: var(--paper); stroke-width: .6; }
+.reader-map .mc-dot { fill: transparent; stroke: none; }
+.reader-map .mc.v1 { fill: #aebccd; }
+.reader-map .mc.v2 { fill: #6d87a3; }
+.reader-map .mc.v3 { fill: var(--accent); }
+
+.reader-big {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 380;
+  font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+  line-height: 1;
+  color: var(--accent);
+}
+.reader-sub {
+  font-family: var(--serif);
+  font-weight: 350;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  margin-top: .35rem;
+  margin-bottom: 1.4rem;
+}
+.reader-top { list-style: none; max-width: 20em; margin-bottom: 1.4rem; }
+.reader-top li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .88rem;
+  color: var(--ink-soft);
+  padding-block: .4rem;
+  border-top: 1px solid var(--line-soft);
+}
+.reader-top li span:last-child {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--accent);
+}
+.reader-note { font-size: .78rem; color: var(--muted); }
+
+/* Most-read tag on publications */
+
+.most-read {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  padding: .18em .55em .14em;
+  margin-left: .6em;
+  vertical-align: .22em;
+  white-space: nowrap;
+}
+
 /* Footer */
 
 .site-foot { border-top: 1px solid var(--line); padding-block: 1.6rem 2.2rem; }
@@ -571,7 +637,7 @@ h1 {
   .section-grid { grid-template-columns: 1fr; gap: 1.6rem; }
   .section-label { position: static; }
   .areas { grid-template-columns: 1fr; gap: 1.2rem; }
-  .teach-cols, .soft-grid, .contact-grid { grid-template-columns: 1fr; }
+  .teach-cols, .soft-grid, .contact-grid, .reader-grid { grid-template-columns: 1fr; }
   .contact-side { border-left: none; padding-left: 0; gap: 1.6rem; }
   .year-group { grid-template-columns: 1fr; gap: 0; }
   .year { position: static; padding-top: 1.6rem; font-size: 1.45rem; }
