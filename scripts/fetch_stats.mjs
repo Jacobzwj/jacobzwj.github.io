@@ -1,6 +1,6 @@
 // Pulls aggregate stats from GoatCounter and writes assets/stats.json.
 // Runs in GitHub Actions daily; requires GOATCOUNTER_API_TOKEN.
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "node:fs";
 
 const SITE = "https://jacobzwj.goatcounter.com";
 const START = "2026-07-01";
@@ -47,6 +47,16 @@ try {
   console.error("hits failed:", e.message);
 }
 
-const out = { updated: end, total, countries, papers };
-writeFileSync(new URL("../assets/stats.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
-console.log(`stats.json written: ${total} visits, ${countries.length} countries, ${papers.length} tracked papers`);
+const outPath = new URL("../assets/stats.json", import.meta.url);
+
+// The headline total never goes down: guards against upstream data
+// expiry or accidental purges shrinking the "since July 2026" number.
+let prevTotal = 0;
+try {
+  prevTotal = Number(JSON.parse(readFileSync(outPath, "utf8")).total) || 0;
+} catch {}
+const finalTotal = Math.max(total, prevTotal);
+
+const out = { updated: end, total: finalTotal, countries, papers };
+writeFileSync(outPath, JSON.stringify(out, null, 1) + "\n");
+console.log(`stats.json written: ${finalTotal} visits (api ${total}, prev ${prevTotal}), ${countries.length} countries, ${papers.length} tracked papers`);
