@@ -149,7 +149,7 @@ a { color: inherit; }
   color: var(--accent);
   margin-bottom: 1.6rem;
 }
-.kick-line { display: block; line-height: 2; }
+.kick-line { display: block; line-height: 1.75; }
 .kick-line-2 { color: var(--muted); }
 
 h1 {
@@ -177,7 +177,6 @@ h1 {
   flex-wrap: wrap;
   gap: .65em;
   align-items: baseline;
-  margin-bottom: 2.4rem;
 }
 .hero-links a {
   text-decoration: none;
