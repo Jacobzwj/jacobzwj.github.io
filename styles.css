@@ -293,8 +293,13 @@ h1 {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 1.08rem;
+  line-height: 1.35;
   margin-bottom: .55rem;
   letter-spacing: .002em;
+}
+/* Reserve two title lines in the 3-column layout so paragraphs align */
+@media (min-width: 901px) {
+  .area h3 { min-height: 2.7em; }
 }
 .area p { font-size: .92rem; line-height: 1.62; color: var(--muted); }
 
