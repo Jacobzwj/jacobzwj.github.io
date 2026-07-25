@@ -11,12 +11,24 @@ if (!token) {
 }
 
 const end = new Date().toISOString().slice(0, 10); // stamp for "updated" only
+
+// The GoatCounter API occasionally returns spurious 404/5xx; retry before failing.
 const api = async (path) => {
-  const r = await fetch(`${SITE}/api/v0${path}`, {
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-  });
-  if (!r.ok) throw new Error(`${path} -> ${r.status}: ${await r.text()}`);
-  return r.json();
+  let lastErr;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    try {
+      const r = await fetch(`${SITE}/api/v0${path}`, {
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      });
+      if (!r.ok) throw new Error(`${path} -> ${r.status}: ${await r.text()}`);
+      return await r.json();
+    } catch (e) {
+      lastErr = e;
+      console.error(`attempt ${attempt} failed: ${e.message}`);
+      if (attempt < 4) await new Promise((res) => setTimeout(res, attempt * 15000));
+    }
+  }
+  throw lastErr;
 };
 
 const q = `start=${START}`; // no end param: defaults to now, so today's data is included
