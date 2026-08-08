@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-07",
- "total": 20,
+ "updated": "2026-08-08",
+ "total": 21,
  "countries": [
   {
    "cc": "US",
@@ -15,7 +15,7 @@
   {
    "cc": "SC",
    "name": "Seychelles",
-   "n": 2
+   "n": 3
   },
   {
    "cc": "NL",
