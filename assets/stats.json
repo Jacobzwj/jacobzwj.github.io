@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-09",
- "total": 21,
+ "updated": "2026-08-10",
+ "total": 23,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 15
+   "n": 16
   },
   {
    "cc": "HK",
@@ -16,6 +16,11 @@
    "cc": "SC",
    "name": "Seychelles",
    "n": 3
+  },
+  {
+   "cc": "ID",
+   "name": "Indonesia",
+   "n": 2
   },
   {
    "cc": "NL",
