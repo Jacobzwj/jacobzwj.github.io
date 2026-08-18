@@ -1,16 +1,16 @@
 {
- "updated": "2026-08-17",
- "total": 27,
+ "updated": "2026-08-18",
+ "total": 29,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 17
+   "n": 18
   },
   {
    "cc": "HK",
    "name": "Hong Kong",
-   "n": 6
+   "n": 9
   },
   {
    "cc": "SC",
@@ -33,5 +33,10 @@
    "n": 1
   }
  ],
- "papers": []
+ "papers": [
+  {
+   "id": "paper/authenticity-weibo",
+   "n": 1
+  }
+ ]
 }
