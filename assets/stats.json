@@ -1,11 +1,11 @@
 {
- "updated": "2026-08-21",
- "total": 33,
+ "updated": "2026-08-22",
+ "total": 35,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 23
+   "n": 24
   },
   {
    "cc": "HK",
@@ -30,6 +30,11 @@
   {
    "cc": "TW",
    "name": "Taiwan",
+   "n": 1
+  },
+  {
+   "cc": "ZA",
+   "name": "South Africa",
    "n": 1
   }
  ],
