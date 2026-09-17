@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-16",
- "total": 60,
+ "updated": "2026-09-17",
+ "total": 61,
  "countries": [
   {
    "cc": "US",
@@ -13,13 +13,13 @@
    "n": 17
   },
   {
-   "cc": "JP",
-   "name": "Japan",
-   "n": 3
-  },
-  {
    "cc": "SC",
    "name": "Seychelles",
+   "n": 4
+  },
+  {
+   "cc": "JP",
+   "name": "Japan",
    "n": 3
   },
   {
