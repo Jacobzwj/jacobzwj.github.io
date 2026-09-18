@@ -1,16 +1,16 @@
 {
- "updated": "2026-09-17",
- "total": 61,
+ "updated": "2026-09-18",
+ "total": 64,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 36
+   "n": 39
   },
   {
    "cc": "HK",
    "name": "Hong Kong",
-   "n": 17
+   "n": 18
   },
   {
    "cc": "SC",
@@ -59,6 +59,10 @@
   }
  ],
  "papers": [
+  {
+   "id": "paper/corporate-ai-communication",
+   "n": 1
+  },
   {
    "id": "paper/authenticity-weibo",
    "n": 1
