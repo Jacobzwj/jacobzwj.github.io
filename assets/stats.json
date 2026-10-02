@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-01",
- "total": 70,
+ "updated": "2026-10-02",
+ "total": 71,
  "countries": [
   {
    "cc": "US",
@@ -38,6 +38,11 @@
    "n": 2
   },
   {
+   "cc": "TW",
+   "name": "Taiwan",
+   "n": 2
+  },
+  {
    "cc": "(UNKNOWN)",
    "name": "(unknown)",
    "n": 1
@@ -45,11 +50,6 @@
   {
    "cc": "SG",
    "name": "Singapore",
-   "n": 1
-  },
-  {
-   "cc": "TW",
-   "name": "Taiwan",
    "n": 1
   },
   {
