@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-04",
- "total": 72,
+ "updated": "2026-10-06",
+ "total": 74,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 43
+   "n": 44
   },
   {
    "cc": "HK",
@@ -45,6 +45,11 @@
   {
    "cc": "(UNKNOWN)",
    "name": "(unknown)",
+   "n": 1
+  },
+  {
+   "cc": "FR",
+   "name": "France",
    "n": 1
   },
   {
