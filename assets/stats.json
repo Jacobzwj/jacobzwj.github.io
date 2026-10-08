@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-07",
- "total": 75,
+ "updated": "2026-10-08",
+ "total": 76,
  "countries": [
   {
    "cc": "US",
@@ -50,6 +50,11 @@
   {
    "cc": "CA",
    "name": "Canada",
+   "n": 1
+  },
+  {
+   "cc": "DE",
+   "name": "Germany",
    "n": 1
   },
   {
