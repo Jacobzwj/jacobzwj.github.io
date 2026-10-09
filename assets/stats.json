@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-08",
- "total": 76,
+ "updated": "2026-10-09",
+ "total": 79,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 44
+   "n": 46
   },
   {
    "cc": "HK",
@@ -38,6 +38,11 @@
    "n": 2
   },
   {
+   "cc": "SG",
+   "name": "Singapore",
+   "n": 2
+  },
+  {
    "cc": "TW",
    "name": "Taiwan",
    "n": 2
@@ -60,11 +65,6 @@
   {
    "cc": "FR",
    "name": "France",
-   "n": 1
-  },
-  {
-   "cc": "SG",
-   "name": "Singapore",
    "n": 1
   },
   {
