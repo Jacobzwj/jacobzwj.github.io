@@ -1,11 +1,11 @@
 {
- "updated": "2026-10-17",
- "total": 81,
+ "updated": "2026-10-18",
+ "total": 84,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 47
+   "n": 48
   },
   {
    "cc": "HK",
@@ -23,18 +23,23 @@
    "n": 3
   },
   {
+   "cc": "NL",
+   "name": "Netherlands",
+   "n": 3
+  },
+  {
    "cc": "CN",
    "name": "China",
    "n": 2
   },
   {
-   "cc": "ID",
-   "name": "Indonesia",
+   "cc": "GB",
+   "name": "United Kingdom",
    "n": 2
   },
   {
-   "cc": "NL",
-   "name": "Netherlands",
+   "cc": "ID",
+   "name": "Indonesia",
    "n": 2
   },
   {
@@ -76,7 +81,7 @@
  "papers": [
   {
    "id": "paper/corporate-ai-communication",
-   "n": 1
+   "n": 2
   },
   {
    "id": "paper/authenticity-weibo",
