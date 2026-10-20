@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-19",
- "total": 85,
+ "updated": "2026-10-20",
+ "total": 87,
  "countries": [
   {
    "cc": "US",
@@ -13,19 +13,24 @@
    "n": 23
   },
   {
+   "cc": "JP",
+   "name": "Japan",
+   "n": 4
+  },
+  {
    "cc": "SC",
    "name": "Seychelles",
    "n": 4
   },
   {
-   "cc": "JP",
-   "name": "Japan",
-   "n": 3
-  },
-  {
    "cc": "NL",
    "name": "Netherlands",
    "n": 3
+  },
+  {
+   "cc": "CA",
+   "name": "Canada",
+   "n": 2
   },
   {
    "cc": "CN",
@@ -55,11 +60,6 @@
   {
    "cc": "(UNKNOWN)",
    "name": "(unknown)",
-   "n": 1
-  },
-  {
-   "cc": "CA",
-   "name": "Canada",
    "n": 1
   },
   {
