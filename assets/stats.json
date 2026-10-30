@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-29",
- "total": 88,
+ "updated": "2026-10-30",
+ "total": 89,
  "countries": [
   {
    "cc": "US",
@@ -18,14 +18,14 @@
    "n": 4
   },
   {
-   "cc": "SC",
-   "name": "Seychelles",
+   "cc": "NL",
+   "name": "Netherlands",
    "n": 4
   },
   {
-   "cc": "NL",
-   "name": "Netherlands",
-   "n": 3
+   "cc": "SC",
+   "name": "Seychelles",
+   "n": 4
   },
   {
    "cc": "CA",
