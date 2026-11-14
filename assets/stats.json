@@ -1,11 +1,11 @@
 {
  "updated": "2026-11-14",
- "total": 100,
+ "total": 101,
  "countries": [
   {
    "cc": "US",
    "name": "United States",
-   "n": 56
+   "n": 59
   },
   {
    "cc": "HK",
@@ -91,7 +91,7 @@
  "papers": [
   {
    "id": "paper/corporate-ai-communication",
-   "n": 2
+   "n": 3
   },
   {
    "id": "paper/authenticity-weibo",
