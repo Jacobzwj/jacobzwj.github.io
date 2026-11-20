@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-19",
- "total": 102,
+ "updated": "2026-11-20",
+ "total": 103,
  "countries": [
   {
    "cc": "US",
@@ -15,7 +15,7 @@
   {
    "cc": "JP",
    "name": "Japan",
-   "n": 4
+   "n": 5
   },
   {
    "cc": "NL",
